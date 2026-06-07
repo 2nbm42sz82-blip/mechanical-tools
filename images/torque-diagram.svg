@@ -26,7 +26,7 @@
   </text>
 
   <!-- 力 -->
-  <line x1="450" y1="180" x2="450" y2="70"
+  <line x1="450" y1="50" x2="450" y2="180"
         stroke="#2563eb"
         stroke-width="6"
         marker-end="url(#arrow)"/>
