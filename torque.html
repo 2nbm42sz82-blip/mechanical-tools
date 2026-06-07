@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+
+<title>トルク計算</title>
+
+<script>
+window.MathJax = {
+  chtml: {
+    displayAlign: 'left'
+  }
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
 <body>
 
 <h1>トルク計算</h1>
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <hr>
 
@@ -21,19 +35,23 @@
 
 <button onclick="calc()">計算</button>
 
-<div style="text-align:left;">
-$$
+<h3>計算式</h3>
+
+\[
 T(N\cdot m)=\frac{9550 \times P(kW)}{N(rpm)}
-$$
-</div>
+\]
+
+<p>
+T：トルク (N·m)<br>
+P：出力 (kW)<br>
+N：回転数 (rpm)
+</p>
 
 <p id="result"></p>
 
 <hr>
 
 <h2>② 力と距離から求める</h2>
-
-
 
 力 F (N)
 
@@ -45,25 +63,19 @@ $$
 
 <button onclick="calcForce()">計算</button>
 
-
-
-<h2>計算式</h2>
+<h3>計算式</h3>
 
 <p>
 T = F × r
 </p>
 
-<img src="images/torque-diagram.svg"     
-     alt="トルク計算図解"     
+<img src="images/torque-diagram.svg"
+     alt="トルク計算図解"
      width="700">
-     
+
 <p id="result2"></p>
 
-     
 <hr>
-
- 
-  
 
 <script>
 
@@ -75,11 +87,19 @@ parseFloat(document.getElementById("power").value);
 let rpm =
 parseFloat(document.getElementById("rpm").value);
 
+if(isNaN(power) || isNaN(rpm) || rpm === 0){
+
+document.getElementById("result").innerHTML =
+"数値を入力してください";
+
+return;
+
+}
+
 let torque =
 9550 * power / rpm;
 
-document.getElementById("result")
-.innerHTML =
+document.getElementById("result").innerHTML =
 "トルク = "
 + torque.toFixed(2)
 + " N·m";
@@ -94,16 +114,24 @@ parseFloat(document.getElementById("force").value);
 let radius =
 parseFloat(document.getElementById("radius").value);
 
+if(isNaN(force) || isNaN(radius)){
+
+document.getElementById("result2").innerHTML =
+"数値を入力してください";
+
+return;
+
+}
+
 let torque =
 force * radius;
 
 document.getElementById("result2").innerHTML =
-"トルク = " +
-torque.toFixed(2) +
-" N·m";
+"トルク = "
++ torque.toFixed(2)
++ " N·m";
 
 }
-  
 
 </script>
 
