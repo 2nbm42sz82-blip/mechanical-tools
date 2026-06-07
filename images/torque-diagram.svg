@@ -51,7 +51,7 @@
         トルク T
   </text>
 
-  <g transform="translate(-50,0)">
+  <g transform="translate(-150,0)">
 
   <!-- 計算式 -->
   <rect x="280" y="20"
