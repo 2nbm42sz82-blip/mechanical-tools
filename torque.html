@@ -3,7 +3,11 @@
 
 <body>
 
-<h2>トルク計算</h2>
+<h1>トルク計算</h1>
+
+<hr>
+
+<h2>① 出力と回転数から求める</h2>
 
 出力(kW)
 
@@ -16,6 +20,32 @@
 <button onclick="calc()">計算</button>
 
 <p id="result"></p>
+
+<hr>
+
+<h2>② 力と距離から求める</h2>
+
+力 F (N)
+
+<input id="force">
+
+距離 r (m)
+
+<input id="radius">
+
+<button onclick="calcForce()">計算</button>
+
+<p id="result2"></p>
+
+<hr>
+
+<h2>計算式</h2>
+
+<p>
+T = F × r
+</p>
+  
+  
 
 <script>
 
@@ -37,6 +67,25 @@ document.getElementById("result")
 + " N·m";
 
 }
+
+function calcForce(){
+
+let force =
+parseFloat(document.getElementById("force").value);
+
+let radius =
+parseFloat(document.getElementById("radius").value);
+
+let torque =
+force * radius;
+
+document.getElementById("result2").innerHTML =
+"トルク = " +
+torque.toFixed(2) +
+" N·m";
+
+}
+  
 
 </script>
 
