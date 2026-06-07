@@ -51,6 +51,8 @@
         トルク T
   </text>
 
+  <g transform="translate(-50,0)">
+
   <!-- 計算式 -->
   <rect x="280" y="20"
         width="260"
@@ -67,5 +69,7 @@
         font-size="20">
         T = 100 × 0.25 = 25 N·m
   </text>
+
+ </g>  
 
 </svg>
