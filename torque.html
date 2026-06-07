@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>トルク計算</h2>
+
+出力(kW)
+
+<input id="power">
+
+回転数(rpm)
+
+<input id="rpm">
+
+<button onclick="calc()">計算</button>
+
+<p id="result"></p>
+
+<script>
+
+function calc(){
+
+let power =
+parseFloat(document.getElementById("power").value);
+
+let rpm =
+parseFloat(document.getElementById("rpm").value);
+
+let torque =
+9550 * power / rpm;
+
+document.getElementById("result")
+.innerHTML =
+"トルク = "
++ torque.toFixed(2)
++ " N·m";
+
+}
+
+</script>
+
+</body>
+</html>
