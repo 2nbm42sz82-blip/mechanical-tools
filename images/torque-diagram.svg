@@ -1,1 +1,71 @@
+<svg width="600" height="350" xmlns="http://www.w3.org/2000/svg">
 
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10"
+      refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- 回転中心 -->
+  <circle cx="150" cy="250" r="12" fill="#333"/>
+  <text x="120" y="285" font-size="18">回転中心</text>
+
+  <!-- レンチ -->
+  <line x1="150" y1="250" x2="450" y2="250"
+        stroke="#666" stroke-width="12"/>
+
+  <!-- 距離 -->
+  <line x1="150" y1="290" x2="450" y2="290"
+        stroke="#e11d48" stroke-width="2"/>
+
+  <text x="270" y="320"
+        fill="#e11d48"
+        font-size="22">
+        r = 0.25 m
+  </text>
+
+  <!-- 力 -->
+  <line x1="450" y1="180" x2="450" y2="70"
+        stroke="#2563eb"
+        stroke-width="6"
+        marker-end="url(#arrow)"/>
+
+  <text x="470" y="130"
+        fill="#2563eb"
+        font-size="22">
+        F = 100 N
+  </text>
+
+  <!-- トルク -->
+  <path d="M110 220
+           A60 60 0 0 1 190 180"
+        fill="none"
+        stroke="#16a34a"
+        stroke-width="5"
+        marker-end="url(#arrow)"/>
+
+  <text x="40" y="170"
+        fill="#16a34a"
+        font-size="22">
+        トルク T
+  </text>
+
+  <!-- 計算式 -->
+  <rect x="280" y="20"
+        width="260"
+        height="80"
+        fill="#f5f5f5"
+        stroke="#cccccc"/>
+
+  <text x="300" y="55"
+        font-size="24">
+        T = F × r
+  </text>
+
+  <text x="300" y="85"
+        font-size="20">
+        T = 100 × 0.25 = 25 N·m
+  </text>
+
+</svg>
